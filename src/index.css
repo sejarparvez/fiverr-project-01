@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply bg-gradient-to-r from-cyan-200 to-cyan-100 md:px-8 px-4 py-1  md:py-2 text-white rounded-full hover:bg-gradient-to-r hover:from-cyan-100 hover:to-cyan-200 duration-700 transition-all ease-in-out;
+}
