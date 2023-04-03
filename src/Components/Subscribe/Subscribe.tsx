@@ -1,10 +1,42 @@
-export default function Subscribe() {
+import emailjs from "@emailjs/browser";
+import React, { useRef } from "react";
+import { toast, Toaster } from "react-hot-toast";
+
+export const Subscribe: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        form.current!,
+        "YOUR_PUBLIC_KEY"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast.success("Thank You For Subscribing");
+        },
+        (error) => {
+          console.log(error.text);
+          toast.error("Error! Please try again.");
+        }
+      );
+  };
+
   return (
     <div className="bg-cyan-200 flex px-10 p-12 lg:m-44 mx-2 md:my-20 my-6 flex-col md:flex-row gap-10 md:gap-0 rounded-2xl">
       <div className="md:flex-1 text-4xl md:text-5xl text-white flex items-center justify-center font-bold">
         Subscribe To Our Weekly Newsletter
       </div>
-      <form className="flex-1 flex items-center justify-center">
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className="flex-1 flex items-center justify-center"
+      >
         <input
           type="text"
           name=""
@@ -16,6 +48,7 @@ export default function Subscribe() {
           Subscribe
         </button>
       </form>
+      <Toaster />
     </div>
   );
-}
+};

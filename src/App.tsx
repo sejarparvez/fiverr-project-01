@@ -7,7 +7,7 @@ import Management from "./Components/Management/Management";
 import Navbar from "./Components/Navbar/Navbar";
 import OurClients from "./Components/OurClients/OurClients";
 import StoreFront from "./Components/StoreFront/StoreFront";
-import Subscribe from "./Components/Subscribe/Subscribe";
+import { Subscribe } from "./Components/Subscribe/Subscribe";
 import WhyUs from "./Components/WhyUs/WhyUs";
 import { LanguageProvider } from "./LanguageContext";
 

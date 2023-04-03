@@ -12,7 +12,7 @@ export default function Toggle() {
     <div className="flex items-center relative">
       <button
         className={`relative inline-block w-12 h-6 bg-gray-300 rounded-full px-1 transition-all duration-300 focus:outline-none ${
-          language === "en" ? "bg-green-500" : "bg-blue-500"
+          language === "en" ? "bg-cyan-200" : "bg-blue-500"
         }`}
         onClick={toggleLanguage}
       >
