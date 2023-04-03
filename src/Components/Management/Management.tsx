@@ -3,7 +3,7 @@ import Model from "./Model";
 
 export default function Management() {
   return (
-    <div className="flex items-center justify-center mt-44 mb-20 gap-12">
+    <div className="flex flex-col items-center justify-center md:mt-20 mt-32 mb-8 sm:flex-row sm:flex-wrap sm:justify-center sm:mx-4 md:mx-0 lg:mx-20 gap-10 p-4">
       <Model
         img={Pic1}
         title="Seller and Buyer Ratings"

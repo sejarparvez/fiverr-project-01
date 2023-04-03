@@ -1,13 +1,23 @@
+import Toggle from "../Toggle/Toggle";
+
 export default function Navbar() {
   return (
-    <div className="flex h-20 bg-white shadow-xl justify-between items-center md:px-16 px-6">
-      <div className="text-2xl font-bold flex items-center">Logo</div>
-      <div className="flex md:gap-8 gap-2 items-center">
-        <div className=" text-blue-200 hover:text-blue-100 md:text-xl cursor-pointer">
+    <div className="flex justify-between px-4 py-4 md:px-16 items-center shadow-lg">
+      <div className="flex gap-16 items-center">
+        <div className="text-2xl font-bold">Logo</div>
+        <div className="hidden md:block">
+          <Toggle />
+        </div>
+      </div>
+      <div className="md:hidden">
+        <Toggle />
+      </div>
+      <div className="flex items-center gap-8">
+        <div className="hidden md:block cursor-pointer text-xl font-bold">
           Sign Up
         </div>
         <div>
-          <button className="btn md:text-xl">Log In</button>
+          <button className="btn">Sign in</button>
         </div>
       </div>
     </div>
